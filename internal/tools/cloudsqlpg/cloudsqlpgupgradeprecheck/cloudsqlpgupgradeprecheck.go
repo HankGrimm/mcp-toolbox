@@ -64,6 +64,11 @@ func (cfg Config) ToolConfigType() string {
 	return resourceType
 }
 
+// GetSourceName returns the name of the source the tool is configured to use.
+func (cfg Config) GetSourceName() string {
+	return cfg.Source
+}
+
 // Initialize initializes the tool from the configuration.
 func (cfg Config) Initialize(context.Context) (tools.Tool, error) {
 	allParameters := parameters.Parameters{

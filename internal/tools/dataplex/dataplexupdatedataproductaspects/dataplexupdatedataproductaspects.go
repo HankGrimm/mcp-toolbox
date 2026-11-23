@@ -67,6 +67,10 @@ func (cfg Config) ToolConfigType() string {
 	return resourceType
 }
 
+func (cfg Config) GetSourceName() string {
+	return cfg.Source
+}
+
 type Aspect struct {
 	ProjectID    string         `json:"projectId" validate:"required"`
 	LocationID   string         `json:"locationId" validate:"required"`

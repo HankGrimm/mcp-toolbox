@@ -67,6 +67,11 @@ func (cfg Config) ToolConfigType() string {
 	return resourceType
 }
 
+// GetSourceName returns the name of the source the tool is configured to use.
+func (cfg Config) GetSourceName() string {
+	return cfg.Source
+}
+
 // Initialize sets up and returns a new Tool instance based on the provided configuration.
 // It processes tool parameters and constructs the necessary manifests for tool operation.
 // Returns an initialized Tool or an error if setup fails.

@@ -270,6 +270,9 @@ Remember to keep your PRs small. For example, if you are contributing a new Sour
   interface**:
   * `ToolConfigType() string`: Returns a unique string identifier for your tool
     (e.g., `"newdb-tool"`).
+  * `GetSourceName() string`: Returns the name of the source the tool is
+    configured to use (typically `cfg.Source`), or `""` if the tool does not
+    use a source.
   * `Initialize(srcs map[string]sources.Source) (tools.Tool, error)`: Validates
     the config, processes parameters, and returns your `Tool` constructed via
     `tools.NewBaseTool(cfg, annotations, manifest, staticParameters)`.

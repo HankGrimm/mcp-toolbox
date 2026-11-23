@@ -67,6 +67,10 @@ func DecodeConfig(ctx context.Context, resourceType string, name string, decoder
 
 type ToolConfig interface {
 	ToolConfigType() string
+	// GetSourceName returns the name of the source the tool is configured to
+	// use, or an empty string if the tool does not use a source. It allows
+	// callers to inspect a tool's source without initializing the tool.
+	GetSourceName() string
 	Initialize(context.Context) (Tool, error)
 }
 

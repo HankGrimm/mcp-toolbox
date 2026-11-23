@@ -82,6 +82,10 @@ func (m MockToolConfig) ToolConfigType() string {
 	return "mock-tool"
 }
 
+func (m MockToolConfig) GetSourceName() string {
+	return m.Source
+}
+
 func (m MockToolConfig) Initialize(context.Context) (tools.Tool, error) {
 	return MockTool{
 		BaseTool: tools.NewBaseTool(
